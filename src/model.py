@@ -16,7 +16,7 @@ class DetM:
         logger.info("Started environment setup")
 
         # Define base project folder using the current script directory
-        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
         os.environ["PROJECT_FOLDER"] = os.path.join(base_dir, "results")
 
         # Paths for videos, frames, and outputs
@@ -36,6 +36,7 @@ class DetM:
         os.environ["N_EPOCHS"] = str(10)
         os.environ["BATCH_SIZE"] = str(4)
         os.environ["TRAIN_IMAGE_SIZE"] = str(640)
+        os.environ["FRAMES_EXTENSION"] = ".jpg"
 
         # YOLO model paths
         yolo_model_dir = os.path.join(base_dir, "src/models_store/yolo")
