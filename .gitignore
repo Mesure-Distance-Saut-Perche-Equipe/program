@@ -1,0 +1,6 @@
+datasets/coco_person/test
+datasets/coco_person/valid
+datasets/coco_person/train
+
+runs
+*/**/.DS_Store
