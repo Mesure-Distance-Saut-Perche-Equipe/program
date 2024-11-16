@@ -17,9 +17,11 @@ class YoloModel(BaseModel):
         logger.info("YOLO started validation")
         results = self.estimator.val(data=data, imgsz=imgsz)
         output = {
-            "mAP50": results.results_dict["metrics/mAP50(M)"],
             "precision": results.results_dict["metrics/precision(B)"],
             "recall": results.results_dict["metrics/recall(B)"],
+            "mAP50": results.results_dict["metrics/mAP50(M)"],
+            "mAP50-95": results.results_dict["metrics/mAP50-95(M)"],
+            "fitness": results.results_dict["fitness)"],
             "f1": results.box.f1[0],
         }
         logger.info("YOLO finished validation")
