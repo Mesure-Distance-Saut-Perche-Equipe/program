@@ -1,4 +1,4 @@
-from src.models.BaseModel import BaseModel
+from src.models.base_model import BaseModel
 from ultralytics import YOLO
 from src.logger import logger
 
@@ -21,7 +21,6 @@ class YoloModel(BaseModel):
             "recall": results.results_dict["metrics/recall(B)"],
             "mAP50": results.results_dict["metrics/mAP50(M)"],
             "mAP50-95": results.results_dict["metrics/mAP50-95(M)"],
-            "fitness": results.results_dict["fitness)"],
             "f1": results.box.f1[0],
         }
         logger.info("YOLO finished validation")
